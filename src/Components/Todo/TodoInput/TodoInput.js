@@ -19,8 +19,9 @@ export default function TodoInput(props) {
         setIsValid(false);
         return;
      }
- 
+
      props.onAddTodo(enteredValue);
+    setEnteredValue('')
    };
  
    return (
@@ -28,7 +29,7 @@ export default function TodoInput(props) {
        <div className={`${styles['form-control']} ${!isValid && styles.invalid}`}
        >
          <label >Todo List</label>
-         <input type="text"  placeholder='Title...'
+         <input type="text"  placeholder='Title...' value ={enteredValue}
            onChange={goalInputChangeHandler} />
        </div>
        <Button type="submit">Add</Button>
